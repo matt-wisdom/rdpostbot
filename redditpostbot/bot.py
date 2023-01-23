@@ -1,5 +1,6 @@
 import logging
 import os
+import argparse
 import time
 import praw
 
@@ -75,10 +76,16 @@ def send_messages():
             subreddit = reddit.subreddit(subreddit)
             send_to_sub(subreddit, message)
             time.sleep(message.interval)
-# 
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-w", "--wait", type=int, help="Wait x seconds before starting")
 
 def main():
     logger.info("Starting")
+    args = parser.parse_args()
+    if args.wait:
+        logger.info(f"Waiting for {args.wait} seconds")
+        time.sleep(args.wait)
     for round in range(config.rounds):
         logger.info(f"Starting round {round}")
         send_messages()
