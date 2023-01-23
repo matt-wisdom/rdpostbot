@@ -6,20 +6,10 @@
 import json
 import imghdr
 import pathlib
+import prompt_toolkit
 
 def multiline_input():
-    lines = []
-    spaces = 0
-    while True:
-        line = input()
-        lines.append(line)
-        if line:
-            spaces = 0
-        else:
-            spaces += 1
-        if spaces == 3:
-            break
-    return "\n\n".join(lines[:-3])
+    return prompt_toolkit.prompt("Input post body (press Esc + Enter when you're done):")
 
 def get_yesno(question: str) -> bool:
     """
@@ -47,7 +37,7 @@ def add_new():
     data = {}
     data["title"] = input_noempty("Post Title:")
     if get_yesno("Add body (text)?"):
-        print("Input Post body (input 3 empty lines when done): ")
+    
         data["body"] = multiline_input()
     else:
         if get_yesno("Add images?"):
