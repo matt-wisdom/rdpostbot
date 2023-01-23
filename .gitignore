@@ -45,11 +45,7 @@ dist/**
 *.xlf
 *.nls.*.json
 *.i18n.json
-bot.session
-bot.session-journal
 .env
-poetry.lock
-accounts-test.txt
 *.db
-mesh999.mm
 .tox/
+*.log
