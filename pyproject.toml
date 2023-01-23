@@ -19,4 +19,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 bot = "redditpostbot.bot:main"
-meman = "redditpostbot.posts_manager:main"
+poman = "redditpostbot.posts_manager:main"

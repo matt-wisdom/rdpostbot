@@ -2,5 +2,5 @@
 
 Schedule reddit posts at regular intervals.
 
-`poetry run meman` to manage posts.
+`poetry run poman` to manage posts.
 `poetry run bot` to run bot.
